@@ -1,7 +1,7 @@
 class Vehicle {
   final String make;
   final String model;
-  int charge240;
+  double charge240;
   dynamic fescore;
 
 
