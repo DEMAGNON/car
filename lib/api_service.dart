@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:brand/vehicle_model.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService {
@@ -9,9 +10,9 @@ class ApiService {
     );
     if (response.statusCode == 200) {
       Map<String, dynamic> jsonResponse = json.decode(response.body);
-      List<dynamic> vehiculesJson = jsonResponse['records'];
+      List<dynamic> vehiculesJson = jsonResponse['results'];
       List<Vehicle> vehicules = vehiculesJson
-          .map((item) => Vehicle.fromJson(item['fields']))
+          .map((item) => Vehicle.fromJson(item))
           .toList();
       return vehicules;
     } else {
@@ -19,5 +20,4 @@ class ApiService {
     }
   }
 }
-
 

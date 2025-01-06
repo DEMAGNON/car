@@ -29,7 +29,7 @@ class _VehicleListScreenState extends State<VehicleListScreen> {
               itemBuilder: (context, index){
                 return ListTile(
                   title:Text("${data[index].make} - ${data[index].model}"),
-                  subtitle: Text("${data[index].charge240}"),
+                  subtitle: Text("${data[index].charge240} - ${data[index].charge120} - ${data[index].barrels08} - ${data[index].barrelsa08}"),
                   trailing: Text(
                     "FE Score: ${data[index].fescore}",
                   ),
